@@ -61,10 +61,19 @@ psql -h xhgrid2 -U avengers -d coffeemachine_avengers -c "\i scripts/postgres/co
 # Cd into src_postgres folder
 cd coffe-machine-deployment/java-components/coffeemach/src_postgres/
 
-# Compile 
-gradle --build-file build.gradle
-
-# If above does not work, then try with the wrapper
+# Generate ice files to generate proxy classes
+# after successfully running this, a folder called servivios should be created
+slice2java CoffeMach.ice
+# Compile
 ./gradlew build
+
 '''
 
+5. Run!
+
+'''bash
+java -jar ServidorCentral/build/libs/ServidorCentral.jar
+java -jar ClienteRecetas/build/libs/ClienteRecetas.jar
+java -jar coffeeMach/build/libs/coffeeMach.jar
+java -jar cmLogistics/build/libs/cmLogistics.jar
+'''
