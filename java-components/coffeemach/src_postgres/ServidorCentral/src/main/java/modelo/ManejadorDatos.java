@@ -12,14 +12,14 @@ import java.util.List;
 public class ManejadorDatos {
 
 	private Connection conexion;
-	
+
 	/**
 	 * <b>Descripción:</b>Este método crea una nueva alarma en el sistema <br>
 	 * <b>Pre:</b>Se debe enviar un id válido de alarma, un id válido de maquina
 	 * en el objeto enviado por parámetro
 	 * 
 	 * @param aM
-	 *            Corresponde a la alarma de una máquina en específico.
+	 *           Corresponde a la alarma de una máquina en específico.
 	 */
 	public void registrarAlarma(AlarmaMaquina aM) {
 		try {
@@ -94,7 +94,7 @@ public class ManejadorDatos {
 	 * existente en la BD
 	 * 
 	 * @param codigooperador
-	 *            Corresponde al código del operador.
+	 *                       Corresponde al código del operador.
 	 * @return List<AsignacionMaquina> Es la lista de asignaciones de un
 	 *         operador.
 	 */
@@ -187,8 +187,8 @@ public class ManejadorDatos {
 	 * 5) El valor de la receta
 	 * 
 	 * @param vM
-	 *            Corresponde a las ventas de la máquina en un periodo
-	 *            determinado
+	 *           Corresponde a las ventas de la máquina en un periodo
+	 *           determinado
 	 */
 	public void registrarReporteVentas(VentasMaquina vM) {
 		try {
@@ -259,9 +259,9 @@ public class ManejadorDatos {
 	 * deben existir en la base de datos
 	 * 
 	 * @param idOperador
-	 *            Corresponde al identificador del operador
+	 *                   Corresponde al identificador del operador
 	 * @param idMaquina
-	 *            Corresponde al identificador de la máquina
+	 *                   Corresponde al identificador de la máquina
 	 * @return boolean Confirma o rechaza la asignación de una máquina a un
 	 *         operador. <b>Pre:<b/> Tanto el id del operdor como el de la
 	 *         maquina deben existir
@@ -292,7 +292,7 @@ public class ManejadorDatos {
 	 * corresponder con uno existente en la base de datos
 	 * 
 	 * @param idMaquina
-	 *            Corresponde al identificador de la máquina
+	 *                  Corresponde al identificador de la máquina
 	 * @return String Retorna el nombre del operador y la ubicación de la
 	 *         máquina
 	 */
@@ -342,12 +342,38 @@ public class ManejadorDatos {
 		return null;
 	}
 
+	public String[] obtenerEstadoAlarmas() {
+		ArrayList<String> estadosAlarmas = new ArrayList<>();
+
+		String queryEstadoAlarmas = "select id_alarma, fecha_final from alarma_maquina";
+
+		try {
+			PreparedStatement ps3 = conexion.prepareStatement(queryEstadoAlarmas);
+
+			ResultSet rs3 = ps3.executeQuery();
+
+			while (rs3.next()) {
+				String resuelta = "Resuelta ";
+				if (rs3.getString(2) == null) {
+					resuelta = "Sin resolver";
+				} else {
+					resuelta += " el " + rs3.getString(2);
+				}
+				estadosAlarmas.add("Alarma: " + rs3.getInt(1) + " - Estado: " + resuelta);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return (String[]) estadosAlarmas.toArray();
+	}
+
 	/**
 	 * <b>Descripción:</b>Retorna el nombre de la alarma generada <b>Pre:</b>El
 	 * identificador de la alarma debe corresponder con uno existente en la BD.
 	 * 
 	 * @param idAlarma
-	 *            Corresponde al identificador de la alarma.
+	 *                 Corresponde al identificador de la alarma.
 	 * @return String Retorna el nombre de la alarma.
 	 */
 	public String darNombreAlarma(int idAlarma) {
@@ -388,7 +414,7 @@ public class ManejadorDatos {
 			if (rs.next()) {
 				return true;
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -510,6 +536,70 @@ public class ManejadorDatos {
 		}
 		return retorno;
 
+	}
+
+	public void registrarOperador(Operador operador) {
+
+		try {
+			String query = "SELECT * FROM operadores o WHERE o.idoperador = ? AND o.nombre = ?";
+
+			PreparedStatement psx = conexion.prepareStatement(query);
+
+			psx.setInt(1, operador.getId());
+			psx.setString(2, operador.getNombre());
+
+			ResultSet rs = psx.executeQuery();
+
+			if (rs.next()) {
+
+				System.out.println("Operador Existe");
+
+			} else {
+
+				query = "insert into operadores (idoperador,nombre) VALUES (?,?)";
+
+				psx.setInt(1, operador.getId());
+				psx.setString(2, operador.getNombre());
+
+				psx.executeQuery();
+
+				System.out.println("Operador Creado");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void registrarMaquina(Maquina maquina) {
+
+		try {
+			String query = "SELECT * FROM maquina m WHERE m.idmaquina = ? AND m.ubicacion = ?";
+
+			PreparedStatement psx = conexion.prepareStatement(query);
+
+			psx.setInt(1, maquina.peticioncodigo());
+			psx.setString(2, maquina.getUbicacion());
+
+			ResultSet rs = psx.executeQuery();
+
+			if (rs.next()) {
+
+				System.out.println("Maquina Existe");
+
+			} else {
+
+				query = "insert into maquina (idmaquina,ubicacion) VALUES (?,?)";
+
+				psx.setInt(1, maquina.peticioncodigo());
+				psx.setString(2, maquina.getUbicacion());
+
+				psx.executeQuery();
+
+				System.out.println("Maquina Creada");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String registrarReceta(String nombre, int precio) {
@@ -734,7 +824,7 @@ public class ManejadorDatos {
 	 * conexion a la BD.
 	 * 
 	 * @param conexion
-	 *            Es el objeto Connection
+	 *                 Es el objeto Connection
 	 */
 	public void setConexion(Connection conexion) {
 		this.conexion = conexion;

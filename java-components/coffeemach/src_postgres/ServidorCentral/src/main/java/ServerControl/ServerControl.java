@@ -122,6 +122,21 @@ public class ServerControl {
 		cbd.cerrarConexion();
 	}
 
+	public String obtenerEstadoAlarmas() {
+		String respuesta = "";
+
+		ConexionBD cbd = new ConexionBD(comunicator);
+		cbd.conectarBaseDatos();
+		ManejadorDatos md = new ManejadorDatos();
+		md.setConexion(cbd.getConnection());
+		String[] estadosAlarmas = md.obtenerEstadoAlarmas();
+		for (String estadoAlarma : estadosAlarmas) {
+			respuesta += estadoAlarma + "\n";
+		}
+		cbd.cerrarConexion();
+		return respuesta;
+	}
+
 	public void reporteVentas(int idMaquina, Date fechaInicial,
 			Date fechaFinal, String[] detalle) {
 		ConexionBD cbd = new ConexionBD(comunicator);
@@ -225,6 +240,32 @@ public class ServerControl {
 
 	}
 
+	public void registrarOperador(Operador operador) {
+
+		ConexionBD cbd = new ConexionBD(comunicator);
+		cbd.conectarBaseDatos();
+		ManejadorDatos md = new ManejadorDatos();
+		md.setConexion(cbd.getConnection());
+
+		md.registrarOperador(operador);
+
+		cbd.cerrarConexion();
+
+	}
+
+	public void registrarMaquina(Maquina maquina) {
+
+		ConexionBD cbd = new ConexionBD(comunicator);
+		cbd.conectarBaseDatos();
+		ManejadorDatos md = new ManejadorDatos();
+		md.setConexion(cbd.getConnection());
+
+		md.registrarMaquina(maquina);
+
+		cbd.cerrarConexion();
+
+	}
+
 	public String registrarReceta(String nombre, int precio) {
 
 		ConexionBD cbd = new ConexionBD(comunicator);
@@ -271,108 +312,108 @@ public class ServerControl {
 
 	// ArrayList<String> listaReceta = new ArrayList<String>();
 
-//	public void llenarListas() {
-//
-//		String[] recetas = consultarRecetas();
-//
-//		String[] ingredientes = consultarIngredientes();
-//
-//		String[] recetaIngrediente = consultarRecetaIngrediente();
-//
-//		for (int i = 0; i < recetas.length; i++) {
-//
-//			listaReceta.add(recetas[i]);
-//
-//		}
-//
-//		for (int i = 0; i < ingredientes.length; i++) {
-//
-//			listaIng.add(ingredientes[i]);
-//
-//		}
-//
-//		for (int i = 0; i < recetaIngrediente.length; i++) {
-//
-//			String[] split = recetaIngrediente[i].split("-");
-//
-//			asociar(Integer.parseInt(split[0].trim()),
-//					Integer.parseInt(split[1].trim()),
-//					Integer.parseInt(split[2].trim()));
-//
-//		}
-//
-//	}
-//
-//	private String[] consultarRecetaIngrediente() {
-//
-//		ConexionBD cbd = new ConexionBD(comunicator);
-//		cbd.conectarBaseDatos();
-//		ManejadorDatos md = new ManejadorDatos();
-//		md.setConexion(cbd.getConnection());
-//
-//		String[] ret = md.consultarRecetaIngrediente();
-//
-//		cbd.cerrarConexion();
-//
-//		return ret;
-//
-//	}
+	// public void llenarListas() {
+	//
+	// String[] recetas = consultarRecetas();
+	//
+	// String[] ingredientes = consultarIngredientes();
+	//
+	// String[] recetaIngrediente = consultarRecetaIngrediente();
+	//
+	// for (int i = 0; i < recetas.length; i++) {
+	//
+	// listaReceta.add(recetas[i]);
+	//
+	// }
+	//
+	// for (int i = 0; i < ingredientes.length; i++) {
+	//
+	// listaIng.add(ingredientes[i]);
+	//
+	// }
+	//
+	// for (int i = 0; i < recetaIngrediente.length; i++) {
+	//
+	// String[] split = recetaIngrediente[i].split("-");
+	//
+	// asociar(Integer.parseInt(split[0].trim()),
+	// Integer.parseInt(split[1].trim()),
+	// Integer.parseInt(split[2].trim()));
+	//
+	// }
+	//
+	// }
+	//
+	// private String[] consultarRecetaIngrediente() {
+	//
+	// ConexionBD cbd = new ConexionBD(comunicator);
+	// cbd.conectarBaseDatos();
+	// ManejadorDatos md = new ManejadorDatos();
+	// md.setConexion(cbd.getConnection());
+	//
+	// String[] ret = md.consultarRecetaIngrediente();
+	//
+	// cbd.cerrarConexion();
+	//
+	// return ret;
+	//
+	// }
 
-//	public void asociar(int idReceta, int idIngrediente, int valor) {
-//
-//		String concat = "";
-//
-//		for (int i = 0; i < listaReceta.size(); i++) {
-//
-//			String[] splitReceta = listaReceta.get(i).split("-");
-//
-//			if (Integer.parseInt(splitReceta[0].trim()) == idReceta) {
-//
-//				concat += splitReceta[0] + "-" + splitReceta[1] + "-"
-//						+ splitReceta[2];
-//
-//				for (int i2 = 0; i2 < listaIng.size(); i2++) {
-//
-//					String[] splitIngrediente = listaIng.get(i2).split("-");
-//
-//					if (Integer.parseInt(splitIngrediente[0].trim()) == idIngrediente) {
-//
-//						concat += "#";
-//
-//						String codAl = validarAlarma(Integer
-//								.parseInt(splitIngrediente[0].trim()));
-//
-//						concat += splitIngrediente[0] + "-"
-//								+ splitIngrediente[1] + "-" + codAl + "-"
-//								+ valor;
-//
-//						listaAsociada.add(concat);
-//					}
-//
-//				}
-//
-//			}
-//
-//		}
-//
-//	}
+	// public void asociar(int idReceta, int idIngrediente, int valor) {
+	//
+	// String concat = "";
+	//
+	// for (int i = 0; i < listaReceta.size(); i++) {
+	//
+	// String[] splitReceta = listaReceta.get(i).split("-");
+	//
+	// if (Integer.parseInt(splitReceta[0].trim()) == idReceta) {
+	//
+	// concat += splitReceta[0] + "-" + splitReceta[1] + "-"
+	// + splitReceta[2];
+	//
+	// for (int i2 = 0; i2 < listaIng.size(); i2++) {
+	//
+	// String[] splitIngrediente = listaIng.get(i2).split("-");
+	//
+	// if (Integer.parseInt(splitIngrediente[0].trim()) == idIngrediente) {
+	//
+	// concat += "#";
+	//
+	// String codAl = validarAlarma(Integer
+	// .parseInt(splitIngrediente[0].trim()));
+	//
+	// concat += splitIngrediente[0] + "-"
+	// + splitIngrediente[1] + "-" + codAl + "-"
+	// + valor;
+	//
+	// listaAsociada.add(concat);
+	// }
+	//
+	// }
+	//
+	// }
+	//
+	// }
+	//
+	// }
 
-//	public String validarAlarma(int codIng) {
-//
-//		String retorno = "";
-//
-//		if (codIng == 1) {
-//
-//			retorno = "8" + "-" + "12";
-//		} else if (codIng == 2) {
-//			retorno = "9" + "-" + "13";
-//		} else if (codIng == 3) {
-//			retorno = "10" + "-" + "14";
-//		} else if (codIng == 4) {
-//			retorno = "11" + "-" + "15";
-//		}
-//
-//		return retorno;
-//
-//	}
+	// public String validarAlarma(int codIng) {
+	//
+	// String retorno = "";
+	//
+	// if (codIng == 1) {
+	//
+	// retorno = "8" + "-" + "12";
+	// } else if (codIng == 2) {
+	// retorno = "9" + "-" + "13";
+	// } else if (codIng == 3) {
+	// retorno = "10" + "-" + "14";
+	// } else if (codIng == 4) {
+	// retorno = "11" + "-" + "15";
+	// }
+	//
+	// return retorno;
+	//
+	// }
 }
