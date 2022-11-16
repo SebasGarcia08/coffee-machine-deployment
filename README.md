@@ -14,6 +14,10 @@ Group: avengers
 
 ## Getting started 
 
+[Deployment diagram here](https://online.visual-paradigm.com/share.jsp?id=323236343337382d31)
+
+![Deployment diagram](images/MaquinaDeCafe.jpg)
+
 # Requirements
 
 * Java
