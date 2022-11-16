@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 arguments=--init-script /home/sebastiangarcia/.config/Code/User/globalStorage/redhat.java/1.12.0/config_linux/org.eclipse.osgi/51/0/.cp/gradle/init/init.gradle --init-script /home/sebastiangarcia/.config/Code/User/globalStorage/redhat.java/1.12.0/config_linux/org.eclipse.osgi/51/0/.cp/gradle/protobuf/init.gradle
+=======
+arguments=--init-script C\:\\Users\\Giova\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.12.0\\config_win\\org.eclipse.osgi\\53\\0\\.cp\\gradle\\init\\init.gradle --init-script C\:\\Users\\Giova\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.12.0\\config_win\\org.eclipse.osgi\\53\\0\\.cp\\gradle\\protobuf\\init.gradle
+>>>>>>> 2276a13b82f4886b17416f03480831df96118c72
 auto.sync=false
 build.scans.enabled=false
-connection.gradle.distribution=GRADLE_DISTRIBUTION(WRAPPER)
+connection.gradle.distribution=GRADLE_DISTRIBUTION(VERSION(7.4.2))
 connection.project.dir=
 eclipse.preferences.version=1
 gradle.user.home=
+<<<<<<< HEAD
 java.home=/usr/lib/jvm/java-11-openjdk-amd64
+=======
+java.home=C\:/Program Files (x86)/Java/jdk1.8.0_311
+>>>>>>> 2276a13b82f4886b17416f03480831df96118c72
 jvm.arguments=
 offline.mode=false
 override.workspace.settings=true

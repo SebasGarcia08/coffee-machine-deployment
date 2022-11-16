@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>cm_logistics</name>
+	<name>cmLogistics</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -28,7 +28,11 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
 			<id>1668567133125</id>
+=======
+			<id>0</id>
+>>>>>>> 2276a13b82f4886b17416f03480831df96118c72
 			<name></name>
 			<type>30</type>
 			<matcher>
