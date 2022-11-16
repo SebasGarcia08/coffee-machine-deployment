@@ -4,12 +4,12 @@
 
 Group: avengers
 
+* Alejandra Díaz Parra
+* Danna Sofía García Trujillo
+* Giovanni Mosquera
+* Nicolás Penagos
+* Sebastián Rodríguez Salazar 
 * Sebastián García Acosta 
-* 
-* 
-* 
-*
-*
 
 
 ## Getting started 

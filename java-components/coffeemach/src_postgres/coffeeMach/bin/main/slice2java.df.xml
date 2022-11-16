@@ -1,25 +1,25 @@
 <state>
-  <timestamp value='1636410319452' />
+  <timestamp value='1668278448853' />
   <sourceSet name='default'>
-    <source name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\CoffeMach.ice'>
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioClienteRecServidor.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioComLogistica.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioComMQCafe.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioProxyServer.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioAbastecimiento.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\StringSeqHelper.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioClienteRecServidorPrx.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\_ServicioClienteRecServidorPrxI.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioComLogisticaPrx.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\_ServicioComLogisticaPrxI.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioComMQCafePrx.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\_ServicioComMQCafePrxI.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioProxyServerPrx.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\_ServicioProxyServerPrxI.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\ServicioAbastecimientoPrx.java' />
-      <file name='C:\Users\janus\Desktop\AsistenteInv\coffeemachine\Code\java-components\coffeemach\src_postgres\coffeeMach\build\generated-src\servicios\_ServicioAbastecimientoPrxI.java' />
+    <source name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/CoffeMach.ice'>
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioClienteRecServidor.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioComLogistica.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioComMQCafe.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioProxyServer.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioAbastecimiento.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/StringSeqHelper.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioClienteRecServidorPrx.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/_ServicioClienteRecServidorPrxI.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioComLogisticaPrx.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/_ServicioComLogisticaPrxI.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioComMQCafePrx.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/_ServicioComMQCafePrxI.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioProxyServerPrx.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/_ServicioProxyServerPrxI.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/ServicioAbastecimientoPrx.java' />
+      <file name='/home/sebastiangarcia/Documents/u/7/arquisoft/coffe-machine-deployment/coffe-machine-deployment/java-components/coffeemach/src_postgres/coffeeMach/build/generated-src/servicios/_ServicioAbastecimientoPrxI.java' />
     </source>
-    <arg value='C:\Program Files\ZeroC\Ice-3.7.6\bin\slice2java.exe' />
-    <arg value='-IC:\Program Files\ZeroC\Ice-3.7.6\slice' />
+    <arg value='/usr/bin/slice2java' />
+    <arg value='-I/usr/share/ice/slice' />
   </sourceSet>
 </state>
